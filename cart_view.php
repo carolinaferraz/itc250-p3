@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Taco Truck</title>
+    <title>Food Truck</title>
     <link rel="stylesheet" type="text/css" href="mini.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 </head>
 <body>
     <header>
-        <h1><a href="index.php"><i class="fas fa-truck"></i> Taco Truck</a></h1>
+        <h1><a href="index.php"><i class="fas fa-truck"></i> Food Truck</a></h1>
     </header>
     <main>
         <h1>Your Cart</h1>
