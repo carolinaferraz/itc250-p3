@@ -1,3 +1,7 @@
+/* fontawesome truck icon info:
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<i class="fas fa-truck"></i> */
+
 html {
     background-color: seashell;
     padding-top: 25px;
@@ -13,7 +17,7 @@ body {
     line-height: 130%;
 }
 header {
-    border-bottom: 2px solid lightgray;
+    border-bottom: 2px dotted lightgray;
     padding: .5em 0;
 }
 header h1 {
@@ -22,22 +26,6 @@ header h1 {
     color: goldenrod;
 }
 
-aside {
-    float: left;
-    width: 150px;
-}
-section {
-    float: left;
-    width: 500px;
-}
-footer {
-    clear: both;
-    border-top: 2px solid lightgray;
-}
-footer p {
-    text-align: right;
-    font-size: 80%;
-}
 h1 {
     font-size: 150%;
     margin: 0;
@@ -49,20 +37,16 @@ h2 {
     padding: .25em 0 .5em;
 }
 
+p.thanks {
+    font-size: 70%;
+    font-style: italic;
 
-ul {
-    margin: 0 0 1em 0;
-    padding: 0 0 0 2.5em;
-}
-li {
-    margin: 0;
-    padding: 0;
 }
 a {
     text-decoration: none;
     color: cadetblue;
     font-weight: bold;
-    padding: 5px;
+    padding: 7px;
 }
 a:hover {
     background-color: seashell;
@@ -80,34 +64,20 @@ label {
     margin-bottom: .75em;
 }
 table {
-    width: 50%;
+    width: 80%;
     border-collapse: collapse;
+    padding: 20px;
+
+}
+
+table tr:nth-child(even) {
+    background-color: #deeced;
 }
 
 td, th {
-    padding: .25em 0;
+    padding: 0.5em 0.2em;
+    letter-spacing: .7px;
 }
 br {
     clear: both;
-}
-
-/* the styles for the table header and footer */
-#cart_header th {
-    border-bottom: 2px solid lightgray;
-}
-#cart_footer td {
-    text-align: right;
-    border-top: 2px solid lightgray;
-}
-/* the styles for the classes */
-.right {
-    text-align: right;
-}
-.left {
-    text-align: left;
-}
-
-.cart_qty {
-    text-align: right;
-    width: 3em;
 }
