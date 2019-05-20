@@ -1,6 +1,6 @@
 <?php
     //item order page
-    // include 'class.php';
+
     include 'model.php';
 
     $Items[]=new Item("taco", 4.95, "our tacos are awesome!");
@@ -29,8 +29,8 @@ class Item {
     public $Extras = array();
     
     public function Item($iname, $iprice, $idesc) {
-        $this->name=$iname;
-        $this->description  = $idesc;
+        $this->name = $iname;
+        $this->description = $idesc;
         $this->price = $iprice;
     
     } #end Item constructor
@@ -59,7 +59,12 @@ class Item {
         echo '
             <form action = "' . $_SERVER['PHP_SELF'] . '"  method = "POST"> 
             <table>';
-        echo'<tr><td> <b>Item<b> </td> <td> <b>Description</b> </td> <td> <b>Price</b>     </td><td> <b>Quantity</b> </td></tr>';
+        echo'<tr>
+        <td> <b>Item<b> </td> 
+        <td> <b>Description</b> </td> 
+        <td> <b>Price</b>     </td>
+        <td> <b>Quantity</b> </td>
+        </tr>';
 
         foreach($Items as $item) { 
                 Menu($item); 
