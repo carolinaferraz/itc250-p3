@@ -4,20 +4,8 @@
     include 'model.php';
 
     $Items[]=new Item("taco", 4.95, "our tacos are awesome!");
-    // $myItem->addExtra("Sour Cream");
-    // $myItem->addExtra("Cheese");
-    // $myItem->addExtra("Guacamole");
-
     $Items[]=new Item("sundae", 3.95, "our sundaes are awesome!");
-    // $myItem->addExtra("Sprinkles");
-    // $myItem->addExtra("Chocolate Sauce");
-    // $myItem->addExtra("Nuts");
-
     $Items[]=new Item("salad", 5.95, "our salads are awesome!");
-    // $myItem->addExtra("Croutons");
-    // $myItem->addExtra("Bacon");
-    // $myItem->addExtra("Lemon Wedges");
-    
 
     //item class & constructor
     
@@ -26,19 +14,13 @@ class Item {
     public $description='';
     public $price=0.00;
     public $quantity=0;
-    public $Extras = array();
     
-    public function Item($iname, $iprice, $idesc) {
+    public function __construct($iname, $iprice, $idesc) {
         $this->name = $iname;
         $this->description = $idesc;
         $this->price = $iprice;
     
     } #end Item constructor
-        
-    public function addExtra($extra) {
-        $this->Extras[] = $extra;
-            
-    }#end addExtra()
 }#end Item class
 
 ?>
@@ -55,7 +37,7 @@ class Item {
     <main>
 	<?php
        
-    if (!isset($_POST['selectedItems'])) {  
+    if (!isset($_POST['selected'])) {  
         echo '
             <form action = "' . $_SERVER['PHP_SELF'] . '"  method = "POST"> 
             <table>';
@@ -71,7 +53,7 @@ class Item {
         }
                
 		echo '
-	    <tr><td><input type = "submit" name = "selectedItems" value ="Submit"></td> </tr>
+	    <tr><td><input type = "submit" name = "selected" value ="Submit"></td> </tr>
 	   	</table>
     	</form>   ';
         } else {   

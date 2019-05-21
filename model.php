@@ -11,29 +11,38 @@ echo '
     </td>
     
     <td> <form action = "' . $_SERVER['PHP_SELF'] .'"  method = "GET">     
-    	<select name="'. $item->name . 'Quantity">
-        	<option value="0">0</option>
-        	<option value="1">1</option>
-        	<option value="2">2</option>
-        	<option value="3">3</option>
-        	<option value="4">4</option>
-        	<option value="5">5</option>
+        <select name="'. $item->name . 'Quantity">';
+        for($i=0; $i<=5; $i++)
+        {
+        echo '<option value="' . $i . '">' . $i .'</option>"';
+        }
+        echo '
         	</select> 
     	<br/>
     </td>
 </tr>
 ';
 }  
- 
-function Total($selectedItems, $items) {
+
+function Total($selected, $items) {
     $total=0;
     
+    
     foreach($items as $item) {
-        if ($selectedItems[$item->name.'Quantity'] > 0) {
-        $total = $total + ($selectedItems[$item->name.'Quantity']*$item->price);
+        if ($selected[$item->name.'Quantity'] > 0) {
+        $total = $total + ($selected[$item->name.'Quantity']*$item->price);
     }
-    $total_f = number_format($total, 2);
 
-}   echo '<p>Order total: $' . $total_f . '.</p>';
-    echo '<p>Thank you! &#9786;</p>';
+    //tax calculation and output formatting 
+    $tax= $total * .101;
+    $total_f = number_format($total, 2);
+    $tax_f = number_format($tax, 2);
+    $gtotal = $total_f + $tax_f;
+    $gtotal_f = number_format($gtotal, 2);
+
+    } 
+      echo '<p>Subtotal: $' . $total_f . '</p>';
+      echo '<p>Taxes: $' . $tax_f . '</p>';
+      echo '<p>Order total: $' . $gtotal_f . '</p>';
+      echo '<p>Thank you! &#9786;</p>';
 }
